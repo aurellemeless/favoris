@@ -1,0 +1,22 @@
+{
+    "config": [
+         {
+            "route" : "/category",
+            "templateUrl": "index.php?module=link&action=category:index",
+            "controller": "LinkCategoryController"
+        },{
+            "route" : "/link",
+            "templateUrl": "index.php?module=link&action=link:index",
+            "controller": "LinkLinkController"
+        }
+    ],
+    "modules" : [],
+    "jsfiles" :{
+        "head" : [],
+        "bottom" : [
+            "js/category.js",
+            "js/link.js"
+        ]
+    }
+    
+}

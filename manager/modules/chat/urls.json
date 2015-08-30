@@ -1,0 +1,26 @@
+{
+    "config": [
+         {
+            "route" : "/chat-add",
+            "templateUrl": "index.php?module=chat&action=chat:add",
+            "controller": "ChatAddController"
+        },{
+            "route" : "/chat-list",
+            "templateUrl": "index.php?module=chat&action=chat:index",
+            "controller": "ChatListController"
+        },{
+            "route" : "/chat-view/:id",
+            "templateUrl": "index.php?module=chat&action=chat:detail",
+            "controller": "ChatViewController"
+        }
+    ],
+    "modules" : [],
+    "jsfiles" :{
+        "head" : [],
+        "bottom" : [
+        "js/chat-add.js",
+        "js/chat-list.js",
+        "js/chat-view.js"
+    ]}
+    
+}

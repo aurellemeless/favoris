@@ -1,0 +1,23 @@
+{
+    "config": [
+         {
+            "route" : "/extension-installer",
+            "templateUrl": "index.php?module=extension&action=installer:index",
+            "controller": "ExtensionInstallerController"
+        },{
+            "route" : "/extension-param/:app",
+            "fonction": "true",
+            "fonctionContent": " function(params){return 'index.php?module=extension&action=param:module&app='+params.app}",
+            "controller": "ExtensionParamController"
+        }
+    ],
+    "modules" : [],
+    "jsfiles" :{
+        "head" : [],
+        "bottom" :[
+            "js/installer.js",
+            "js/param.js"
+        ]
+    }
+    
+}

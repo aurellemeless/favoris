@@ -1,0 +1,47 @@
+{
+    "config": [
+         {
+            "route" : "/laboratoire-save",
+            "templateUrl": "index.php?module=visite&action=laboratoire:index",
+            "controller": "LaboratoireSaveController"
+        },{
+            "route" : "/laboratoire-result",
+            "templateUrl": "index.php?module=visite&action=laboratoire:result",
+            "controller": "LaboratoireResultController"
+        }, {
+            "route" : "/radiologie-save",
+            "templateUrl":"index.php?module=visite&action=radiologie:index",
+            "controller": "RadiologieSaveController"
+        }, {
+            "route" : "/radiologie-result",
+            "templateUrl": "index.php?module=visite&action=radiologie:result",
+            "controller": "RadiologieResultController"
+        }, {
+            "route" : "/candidat",
+            "templateUrl": "index.php?module=visite&action=candidat:index",
+            "controller": "CandidatController"
+        }, {
+            "route" : "/candidat/:id",
+            "templateUrl": "index.php?module=visite&action=candidat:edit",
+            "controller": "CandidatEditController"
+        }, {
+            "route" : "/importer",
+            "templateUrl": "index.php?module=visite&action=importer:index",
+            "controller": "ImporterController"
+        }
+    ],
+    "modules" : [],
+    "jsfiles" :{
+        "head" : [],
+        "bottom" : [
+            "js/laboratoire-save.js",
+            "js/laboratoire-result.js",
+            "js/radiologie-save.js",
+            "js/radiologie-result.js",
+            "js/candidat-edit.js",
+            "js/candidat.js",
+            "js/importer.js"
+        ]
+    }
+    
+}

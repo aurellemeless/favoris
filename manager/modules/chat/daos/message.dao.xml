@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="message" realname="message" primarykey="id" />
+        <foreigntable name="sender" realname="user" primarykey="id" onforeignkey="sender_id" />
+        <foreigntable name="receiver" realname="user" primarykey="id" onforeignkey="receiver_id" />
+    </datasources>
+    <record>
+        <property name="id" fieldname="id" datatype="int" autoincrement="true"/>
+        <property name="content" fieldname="content" datatype="text" required="true"/>
+        <property name="createdate" fieldname="createdate" datatype="datetime" default=""/>
+        <property name="sender_id" fieldname="sender_id" datatype="int" required="true"/>
+        <property name="receiver_id" fieldname="receiver_id" datatype="int" required="true"/>
+        <property name="read" fieldname="read" datatype="tinyint" default="0"/> 
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+        <property table="sender" name="login" fieldname="login" datatype="varchar"/>
+        <property table="sender" name="lastname" fieldname="lastname" datatype="varchar" />
+        <property table="sender"  name="firstname" fieldname="firstname" datatype="varchar" />
+        <property table="sender"  name="email" fieldname="email" datatype="varchar"/>
+        
+    </record>
+    <factory>
+        <method name="findLatest" type="select">
+            <parameter name="user_id" />
+            <conditions logic="AND">
+                <eq property="receiver_id" expr="$user_id" />
+                <eq property="read" value="0" />
+            </conditions>
+            <order>
+                <orderitem property="createdate" way="desc" />
+            </order>
+            <limit offset="0" count="10"/>
+            <body><![CDATA[
+            ]]></body>
+        </method>
+        <!--<method name="findByStage" type="select/selectfirst/delete/update/php">
+            <parameter name="" />
+            <values>
+                <value property="" value="" />
+            </values>
+            <conditions logic="and/or">
+                <eq property="" value="" />
+            </conditions>
+            <order>
+                <orderitem property="" way="asc/desc" />
+            </order>
+            <limit offset="" count=""/>
+            <body><![CDATA[
+            ]]></body>
+        </method>-->
+    </factory>
+</dao>

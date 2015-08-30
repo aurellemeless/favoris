@@ -1,0 +1,18 @@
+{
+    "config": [
+         {
+            "route" : "/about",
+            "templateUrl": "index.php?module=bos&action=default:about",
+            "controller": "UpdaterController"
+        }
+    ],
+    "modules" : [], 
+    "jsfiles" :{
+        "head" : [],
+        "bottom": [
+            "js/updater.js",
+            "js/shopdate-filter.js"
+        ]
+    }
+    
+}

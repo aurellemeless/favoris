@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="user" realname="user" primarykey="id" />
+    </datasources>
+    <record>
+        <property name="id" fieldname="id" datatype="int" autoincrement="true"/>
+        <property name="login" fieldname="login" datatype="varchar" required="true" maxlength="50"/>
+        <property name="password" fieldname="password" datatype="varchar" required="true" maxlength="110"/>
+        <property name="email" fieldname="email" datatype="varchar" required="true" maxlength="50"/>
+        <property name="lastname" fieldname="lastname" datatype="varchar" required="true" maxlength="45"/>
+        <property name="firstname" fieldname="firstname" datatype="varchar" required="true" maxlength="25"/>
+        <property name="professionnal" fieldname="professionnal" datatype="enum" default=""/>
+        <property name="keyactivate" fieldname="keyactivate" datatype="varchar" default="" maxlength="45"/>
+        <property name="sessionid" fieldname="sessionid" datatype="varchar" default="" maxlength="45"/>
+        <property name="birthdate" fieldname="birthdate" datatype="date" default=""/>
+        <property name="createdate" fieldname="createdate" datatype="datetime" insertpattern="NOW()" default=""/>
+        <property name="modifydate" fieldname="modifydate" datatype="datetime" updatepattern="NOW()" insertpattern="NOW()" default=""/>
+        <property name="createduser" fieldname="createduser" datatype="int" default=""/>
+        <property name="modifyuser" fieldname="modifyuser" datatype="int" default=""/>
+        <property name="active" fieldname="active" datatype="enum" default="NO" comment="user status"/>
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+    </record>
+    <factory>
+        <!-- methodes jauth -->
+        <method name="getByKeyactivate" type="selectfirst">
+            <parameter name="keyactivate" />
+            <conditions>
+                <eq property="keyactivate" expr="$keyactivate" />
+            </conditions>
+        </method>
+        <method name="getByLoginPassword" type="selectfirst">
+            <parameter name="login" />
+            <parameter name="password" />
+
+            <conditions>
+                <eq property="login" expr="$login" />
+                <eq property="password" expr="$password" />
+                <eq property="active" value="YES" />
+            </conditions>
+        </method>
+        <method name="getById" type="selectfirst">
+            <parameter name="id" />
+            <conditions>
+                <eq property="id" expr="$id" />
+            </conditions>
+        </method>
+        <method name="getByLogin" type="selectfirst">
+            <parameter name="login" />
+
+            <conditions>
+                <eq property="login" expr="$login" />
+            </conditions>
+        </method>
+
+        <method name="updatePassword" type="update">
+            <parameter name="login" />
+            <parameter name="password" />
+
+            <values>
+                <value property="password" expr="$password"/>
+            </values>
+            <conditions>
+                <eq property="login" expr="$login" />
+            </conditions>
+        </method>
+
+        <method name="deleteByLogin" type="delete">
+            <parameter name="login" />
+            <conditions>
+                <eq property="login" expr="$login" />
+            </conditions>
+        </method>
+
+        <method name="findByLogin" type="select">
+            <parameter name="pattern" />
+            <conditions>
+                <like property="login" expr="$pattern" />
+            </conditions>
+            <order>
+                <orderitem property="login" way="asc" />
+             </order>
+        </method>
+        <method name="findAll" type="select">
+            <order>
+                <orderitem property="login" way="asc" />
+            </order>
+        </method>
+        
+        <!--<method name="findByStage" type="select/selectfirst/delete/update/php">
+            <parameter name="" />
+            <values>
+                <value property="" value="" />
+            </values>
+            <conditions logic="and/or">
+                <eq property="" value="" />
+            </conditions>
+            <order>
+                <orderitem property="" way="asc/desc" />
+            </order>
+            <limit offset="" count=""/>
+            <body><![CDATA[
+            ]]></body>
+        </method>-->
+    </factory>
+</dao>

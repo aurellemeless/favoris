@@ -1,0 +1,43 @@
+{
+    "config": [
+         {
+            "route" : "/user-group",
+            "templateUrl": "index.php?module=user&action=group:index",
+            "controller": "UserGroupController"
+        },{
+            "route" : "/user-feature",
+            "templateUrl": "index.php?module=user&action=feature:index",
+            "controller": "UserFeatureController"
+        }, {
+            "route" : "/user-role",
+            "templateUrl":"index.php?module=user&action=role:index",
+            "controller": "UserRoleController"
+        }, {
+            "route" : "/user-group-feature/:group",
+            "templateUrl": "index.php?module=user&action=groupfeature:index",
+            "controller": "UserGroupFeatureController"
+        }, {
+            "route" : "/user-user",
+            "templateUrl": "index.php?module=user&action=user:index",
+            "controller": "UserUserController"
+        }, {
+            "route" : "/user-profile",
+            "templateUrl": "index.php?module=user&action=profile:index",
+            "controller": "UserProfileController"
+        }
+    ],
+    "modules" : [],
+    "jsfiles" :{
+        "head" : [],
+        "bottom" : [
+            "js/feature.js",
+            "js/group-feature.js",
+            "js/group.js",
+            "js/param.js",
+            "js/role.js",
+            "js/user.js",
+            "js/profile.js"
+        ]
+    }
+    
+}

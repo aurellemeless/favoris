@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="post" realname="post" primarykey="id" />
+    </datasources>
+    <record>
+        <property name="id" fieldname="id" datatype="int" autoincrement="true"/>
+        <property name="title" fieldname="title" datatype="varchar" required="true" maxlength="110"/>
+        <property name="slug" fieldname="slug" datatype="varchar" default="" maxlength="300"/>
+        <property name="content" fieldname="content" datatype="text" default=""/>
+        <property name="author" fieldname="author" datatype="varchar" default="" maxlength="60"/>
+        <property name="order" fieldname="order" datatype="int" default=""/>
+        <property name="edit_number" fieldname="edit_number" datatype="int" default="0"/>
+        <property name="meta_description" fieldname="meta_description" datatype="varchar" default="" maxlength="200"/>
+        <property name="meta_keywords" fieldname="meta_keywords" datatype="varchar" default="" maxlength="500"/>
+        <property name="meta_robots" fieldname="meta_robots" datatype="varchar" default="" maxlength="45"/>
+        <property name="created" fieldname="created" datatype="datetime" default=""/>
+        <property name="modified" fieldname="modified" datatype="datetime" default=""/>
+        <property name="published" fieldname="published" datatype="enum" default="YES"/>
+        <property name="featured" fieldname="featured" datatype="enum" required="true" default="NO"/>
+        <property name="views" fieldname="views" datatype="int" default="0"/>
+        <property name="user_id" fieldname="user_id" datatype="int" required="true"/>
+        <property name="startdate" fieldname="startdate" datatype="datetime" default=""/>
+        <property name="enddate" fieldname="enddate" datatype="datetime" default=""/>
+        <property name="category_id" fieldname="category_id" datatype="int" required="true"/>
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+    </record>
+    <factory>
+        <!--<method name="findByStage" type="select/selectfirst/delete/update/php">
+            <parameter name="" />
+            <values>
+                <value property="" value="" />
+            </values>
+            <conditions logic="and/or">
+                <eq property="" value="" />
+            </conditions>
+            <order>
+                <orderitem property="" way="asc/desc" />
+            </order>
+            <limit offset="" count=""/>
+            <body><![CDATA[
+            ]]></body>
+        </method>-->
+    </factory>
+</dao>

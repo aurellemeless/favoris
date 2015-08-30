@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="group_feature" realname="group_feature" primarykey="group_id,feature_id" />
+        <foreigntable name="feature" realname="feature" onforeignkey="feature_id" primarykey="id" />
+    </datasources>
+    <record>
+        <property name="group_id" fieldname="group_id" datatype="int" required="true"/>
+        <property name="feature_id" fieldname="feature_id" datatype="int" required="true"/>
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+        <property table="feature" name="feature_title" fieldname="title" datatype="varchar"/>
+        <property table="feature" name="feature_description" fieldname="description" datatype="varchar"/>
+    </record>
+    <factory>
+        <!--<method name="findByStage" type="select/selectfirst/delete/update/php">
+            <parameter name="" />
+            <values>
+                <value property="" value="" />
+            </values>
+            <conditions logic="and/or">
+                <eq property="" value="" />
+            </conditions>
+            <order>
+                <orderitem property="" way="asc/desc" />
+            </order>
+            <limit offset="" count=""/>
+            <body><![CDATA[
+            ]]></body>
+        </method>-->
+    </factory>
+</dao>
