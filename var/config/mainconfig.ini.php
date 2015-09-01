@@ -94,7 +94,7 @@ multiview=off
 ; entry points which are not in the same directory (ex: you have two entry point : http://foo.com/aaa/index.php
 ; and http://foo.com/aaa/bbb/other.php ), you MUST set the basePath (ex here, the higher entry point is index.php so
 ; : basePath="/aaa/" )
-basePath="/df/"
+basePath="/favoris/"
 
 defaultEntrypoint=index
 
