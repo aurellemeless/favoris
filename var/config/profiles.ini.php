@@ -23,7 +23,7 @@ force_encoding = on
 ; with the following parameter, you can specify a table prefix which will be
 ; applied to DAOs automatically. For manual jDb requests, please use the method
 ; jDbConnection::prefixTable().
-table_prefix = hous_
+table_prefix = hga_
 
 ; to use pdo
 ;usepdo=on

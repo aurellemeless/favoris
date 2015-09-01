@@ -18,8 +18,10 @@ class userCtrl extends jController {
    
     function inscription() {
         $rep = $this->getResponse('html');
+        $this->message = $this->param('msg');
         $rep->title="Inscription ".$rep->appName;
         $rep->bodyTpl='inscription';
+        $rep->body->assign('message',  $this->message);
         
         return $rep;
     } 
@@ -74,33 +76,35 @@ class userCtrl extends jController {
             $user->email = $email;
             $user->keyactivate = uniqid('',true);
            // $user->professionnel = $professionnel;
+           //jLog::dump($user);
             try {
                 
                            
                     $nu = jAuth::saveNewUser($user) ; 
                     //set user as customer
-                    $tbcust = jDao::get('customer~account');
-                    $custRecord = jDao::createRecord('customer~account');
-                    $custRecord->user_id = $nu->id;
-                    $custRecord->credit = 0;
-                    $tbcust->insert($custRecord);
+//                    $tbcust = jDao::get('customer~account');
+//                    $custRecord = jDao::createRecord('customer~account');
+//                    $custRecord->user_id = $nu->id;
+//                    $tbcust->insert($custRecord);
                     // end 
                     $this->success=true;
                     $this->message ="Votre compte a &eacute;t&eacute; cr&eacute;e avec succ&egrave;s, un e-mail de "
                     . " confirmation vous "
                     . " a &eacute;t&eacute; envoy&eacute; à l'adresse : ".$email;
 
-                    $mail = new jMailer(); 
+                   /* $mail = new jMailer(); 
 
                     $tpl = $mail->Tpl('user~createmail',true); 
                     $tpl->assign('user',$user);
                     $mail->Send();
-                   
+                   */
 
 
             } catch (Exception $exc) {
+                $this->message = "D&eacute;sole votre inscription a &eacute;chou&eacute;e veuillez reesayer ult&eacute;rieurement.";
                 $rep = $this->getResponse('redirect');
-                $rep->action = "jauth~login:form";
+                $rep->action = "user~user:inscription";
+                $rep->params = array('msg'=>  $this->message); 
                 return $rep;
             }   
            
@@ -110,6 +114,21 @@ class userCtrl extends jController {
         
         return $rep;
     }
+    
+    function ckeckEmail() {
+        $rep = $this->getResponse('json');
+	//	
+        $q=$this->param('q');
+        $tb = jDao::get('user');
+        $user = $tb->getByEmail($q);
+        if($user->id)
+            $this->success = true;
+        $rep->data=array('exist'=>  $this->success);
+        
+        return $rep;
+    }
+    
+    
  /*   
     function create(){
 	$rep = $this->getResponse('json');

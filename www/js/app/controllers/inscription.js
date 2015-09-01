@@ -1,48 +1,45 @@
 /* 
  *  Inscription 
  */
-//angular.module('shopApp',['ngRoute','ngTouch','ui.bootstrap','ui.utils']);
-angular.module('shop')
-        .controller('InscriptionCtrl',['$scope','$http',function($scope, $http){
+angular.module('dfInscription',['ui.bootstrap']);
+angular.module('dfInscription')
+        .controller('InscriptionController',['$scope','$http',function($scope, $http){
                 
-                var saveurl='/shop/index.php?module=user&action=user:create';
+                var saveurl=APPBASE+'index.php?module=user&action=user:create';
                 
-                //search form
+                //subscribe form
                 $scope.user = {};
-                $scope.inscription = {};
-                $scope.inscription.show = true;
+                $scope.checker = {};
+                $scope.checker.exist = false;
                
                 $scope.saveUser = function(user){
                     if(user.$valid){
-
-                        $http({
-                            method  : 'POST',
-                            url     : saveurl,
-                            data    : $.param($scope.user),  // pass in data as strings
-                            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
-                        })
-                        .success(function(data) {
-                              $scope.inscription = data;
-                              if(data.success){
-                                  $scope.formReset();
-                              }
-
-                        });
-
-
+                        document.form_user.action=saveurl;
+                        document.form_user.submit();
                     }
                 };
                 
+                $scope.checkEmail = function(field,q){
+                    if($scope.form_user[field].$valid){
+                         //communes
+                        $http.get(APPBASE+'index.php?module=user&action=user:ckeckEmail&q='+q).
+                              success(function(data, status) {
+                                $scope.checker.exist= data.exist;
+                              }).
+                              error(function(data, status) {
+                                console.log('ERROR checking email');
+                            });
+                    }
+                };
                 
                 $scope.formReset = function(){
                     document.form_user.reset();
                     $scope.user = {};
                     $scope.form_user.$setPristine();
-                   
                 };
                 //validation
                 
-                 $scope.isInvalid = function(field){
+                $scope.isInvalid = function(field){
                         return $scope.form_user[field].$invalid && $scope.form_user[field].$dirty;
                   };
 
