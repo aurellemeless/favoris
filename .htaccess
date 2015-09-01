@@ -1,12 +1,9 @@
 allow from all
 #<IfModule mod_rewrite.c>
 #    RewriteEngine On
-##    RewriteBase /df/
-#    RewriteRule ^bos/(.*) bos/$1 [L]
+##    RewriteBase /favoris/
+#    RewriteRule ^manager/(.*) manager/$1 [L]
 #    RewriteRule ^images/(.*) www/images/$1 [L]
 #    RewriteRule ^asset/(.*) www/asset/$1 [L]
-#    RewriteRule ^gestion/(.*) www/gestion/$1 [L]
-#    RewriteRule ^packages/(.*) www/packages/$1 [L]
-#    RewriteRule ^webmail/(.*) webmail/$1 [L]
 #    RewriteRule ^(.*)$ index.php?jpathinfo=/$1 [L,QSA]
 #</IfModule>
