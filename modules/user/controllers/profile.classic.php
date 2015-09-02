@@ -32,24 +32,19 @@ class profileCtrl extends jController {
         $lastname=$this->param('lastname');
         $firstname=$this->param('firstname');
         $email=$this->param('email');
-        $year=$this->param('year');
-        $day=$this->param('day');
-        $month=$this->param('month');
         //alert
         $success=false;
         $msg="Profile non modifié";
         //verification
         
             //update
-        if(!empty($firstname) && !empty($lastname) && jFilter::isEmail($email)
-                && checkdate($month, $day, $year)){
+        if(!empty($firstname) && !empty($lastname) && jFilter::isEmail($email)){
             // instanciation de la factory
             $user = jAuth::getUser(jAuth::getUserSession()->login);
             // infos user
             $user->lastname = $lastname;
             $user->firstname = $firstname;
             $user->email = $email;
-            $user->birthdate = $year.'/'.$month.'/'.$day;
             // on le sauvegarde dans la base
             try{
                 jAuth::updateUser($user);

@@ -1,15 +1,14 @@
 /* 
  *  Controller - profile 
  */
-angular.module('shop')
-        .controller('UserProfileController',['$scope','$http','shopdate',function($scope, $http, shopdate){
+angular.module('auth',[])
+angular.module('auth')
+        .controller('UserProfileController',['$scope','$http',function($scope, $http, linkdate){
                 //search form
-                $scope.days = shopdate.days;
-                $scope.monthes = shopdate.monthes;
-                $scope.years = shopdate.years;
+                
                 $scope.user = {};
                 $scope.operation = {};
-                $scope.operation.show = true;
+                $scope.operation.success = null;
                 $scope.saveUser = function(user){
                     if(user.$valid){
 

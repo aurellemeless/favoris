@@ -1,4 +1,4 @@
-{include 'link~header'}
+{zone 'link~header'}
 {meta_html bodyattr array('ng-app'=>'dfInscription', 'ng-controller'=>'InscriptionController')}
 
 <!-- end space1 -->

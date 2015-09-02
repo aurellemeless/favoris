@@ -1,6 +1,6 @@
 <?php
 /**
-* @package   shop
+* @package   df
 * @subpackage user
 * @author    aurelle Meless
 * @copyright 2011 aurelle Meless

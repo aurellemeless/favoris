@@ -1,17 +1,17 @@
-{zone 'shop~header'}
-
+{zone 'link~header'}
+{meta_html bodyattr array('ng-app'=>'auth', 'ng-cloak'=>'')}
 
 <div class="container" ng-controller="UserProfileController">
 
 		
         <!-- section panier -->
-        <section style="padding:20px;padding-bottom: 15px; padding-top: 15px;background: #fff;">
+        <section>
             <div class="row" >
            
                         
                     {literal}
         
-        <h3 ng-if="operation.success" class="alert alert-success">{{operation.msg}}</h3>
+        <h3 ng-if="operation.success==true" class="alert alert-success">{{operation.msg}}</h3>
         <h4 ng-if="operation.success==false" class="alert alert-danger">{{operation.msg}}</h4>
             <div class="col-md-7">
                 <div class="">
@@ -35,33 +35,7 @@
                                </p>
                            </div>
                        </div>
-                       <div class="row">
-                            <div class="col-xs-12 form-group">
-                               <label >Date de naissance </label>
-                            </div>
-                            <div class="col-xs-2 form-group" ng-class="{'has-error' : isInvalid('day')}">
-                                <select  class="form-control" ng-model="user.day" name="day">
-                                    <option value=""> - jour - </option>
-                                   <option ng-repeat="d in days">{{d}}</option>
-                                </select>
-                            </div>
-                            <div class="col-xs-2 form-group" ng-class="{'has-error' : isInvalid('month')}">
-                                <select  class="form-control" name="month" ng-model="user.month">
-                                    <option value=""> - mois - </option>
-                                   <option ng-repeat="d in monthes">{{d}}</option>
-                               </select>
-                            </div>
-                            <div class="col-xs-3 form-group"  ng-class="{'has-error' : isInvalid('year')}">
-                                <select  class="form-control" name="year" ng-model="user.year">
-                                     <option value=""> - ann&eacute;e - </option>
-                                    <option ng-repeat="d in years">{{d}}</option>
-                                </select>
-                            </div>
-                            <p ng-show="isInvalid('day')|| isInvalid('month') || isInvalid('year')" class="error">
-                                    Date de naissance obligatoire
-                            </p>
-                        </div>
-                        
+                      
                        <div class="row">
                            <div class="col-xs-8 form-group" ng-class="{'has-error' : isInvalid('email')}">
                                <label for="email_user">E-mail</label>
@@ -127,16 +101,9 @@
         </section>                    
         <!-- end.section panier -->
 
-
-        <!-- FOOTER -->
-
-        {include 'shop~simplefooter'}
-
-        <!-- END.FOOTER -->
 </div>
-
+     
         
-        
-{include 'shop~footerjs'}
-<script src="/asset/js/app/controllers/profile.js"></script>
+{include 'link~footer'}
+<script src="{jrooturl}www/js/app/controllers/profile.js"></script>
 <!-- app -->
