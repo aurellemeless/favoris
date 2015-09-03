@@ -26,5 +26,23 @@ class defaultCtrl extends jController {
         $rep->bodyTpl = 'about';
         return $rep;
     }
+    
+    /**
+    *
+    */
+    function favorite() {
+        $rep = $this->getResponse('html');
+        $rep->bodyTpl = 'favorite_main';
+        return $rep;
+    }
+    
+    /**
+    *
+    */
+    function dashboard() {
+        $rep = $this->getResponse('htmlfragment');
+        $rep->tplname = 'favorite_dashboard';
+        return $rep;
+    }
 }
 

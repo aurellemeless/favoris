@@ -1,5 +1,5 @@
 /*
- *init shop file
+ * init shop file
  *
 */
 

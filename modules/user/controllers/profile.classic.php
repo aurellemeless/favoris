@@ -1,10 +1,10 @@
 <?php
 /**
-* @package   myadmin
+* @package   df
 * @subpackage user
 * @author    aurelle Meless
-* @copyright 2011 aurelle Meless
-* @link      http://www.ivoiremaker.net
+* @copyright 2015 aurelle Meless
+* @link      http://www.theindice.com
 * @license    All rights reserved
 */
 

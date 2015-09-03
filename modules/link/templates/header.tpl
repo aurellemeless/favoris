@@ -15,6 +15,10 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="{jrooturl ''}">Home</a></li>
             <li><a href="{jurl 'link~default:about'}">About</a></li>
+            {ifuserconnected}
+            <li><a href="{jurl 'link~default:favorite'}">My Favoites</a></li>
+            {/ifuserconnected}
+                 
           </ul>
           <ul class="nav navbar-nav navbar-right">
               {ifuserconnected}

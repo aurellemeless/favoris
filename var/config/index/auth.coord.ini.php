@@ -45,7 +45,7 @@ bad_ip_action = "jauth~login:out"
 on_error_sleep = 3
 
 ; action to redirect after the login
-after_login = "link~default:index"
+after_login = "link~default:favorite"
 
 ; action to redirect after a logout
 after_logout = "jauth~login:form"
