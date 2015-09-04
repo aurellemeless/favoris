@@ -1,13 +1,21 @@
 /* 
  *  Favorite 
  */
-angular.module('df',['ngRoute','ui.bootstrap']);
+angular.module('df',['ngRoute','ui.bootstrap','ngTable']);
 angular.module('df')
         .config(['$routeProvider', '$locationProvider',
           function($routeProvider,$locationProvider) {
               $routeProvider.when('/links', {
                                     templateUrl:APPBASE+'index.php?module=link&action=link:index',
                                     controller: 'LinkController'
+                              }).
+                             when('/category', {
+                                    templateUrl:APPBASE+'index.php?module=link&action=category:index',
+                                    controller: 'CategoryController'
+                              }).
+                            when('/browser/:id', {
+                                    templateUrl:APPBASE+'index.php?module=link&action=default:browser',
+                                    controller: 'BrowserController'
                               }).
                              when('/link/add', {
                                     templateUrl:APPBASE+'index.php?module=link&action=link:add',

@@ -9,6 +9,11 @@ angular.module('df')
                 //subscribe form
                 $scope.link = {};
                 $scope.categories = [];
+                $scope.link.category_id = null;
+                 $http.get(APPBASE + 'index.php?module=link&action=category:read&cb=1')
+                            .success(function (d) {
+                                    $scope.categories = d.Items;
+                            });
                 $scope.save = function(link,back){
                     if(link.$valid){
                         var formElement = document.getElementById("form_link");

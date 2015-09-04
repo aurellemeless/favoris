@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dao xmlns="http://jelix.org/ns/dao/1.0">
     <datasources>
-        <primarytable name="link" realname="link" primarykey="id" />
+        <primarytable name="category" realname="category" primarykey="id" />
     </datasources>
     <record>
         <property name="id" fieldname="id" datatype="int" autoincrement="true"/>
-        <property name="title" fieldname="title" datatype="varchar" required="true" maxlength="110"/>
-        <property name="url" fieldname="url" datatype="text" required="true"/>
-        <property name="category_id" fieldname="category_id" datatype="int" required="true"/>
-        <property name="screenshot" fieldname="screenshot" datatype="text" default=""/>
-        <property name="content" fieldname="content" datatype="text" default=""/>
-        <property name="user_id" fieldname="user_id" datatype="int" required="true"/>
+        <property name="title" fieldname="title" datatype="varchar" required="true" maxlength="45"/>
+        <property name="image" fieldname="image" datatype="text" default=""/>
+        <property name="parent" fieldname="parent" datatype="int" />
         <!--<property name="" fieldname="" datatype="string/int/float/date"
         required="yes" maxlength="" minlength="" regexp="" sequence=""
         updatepattern="" insertpattern="" selectpattern=""/>-->

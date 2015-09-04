@@ -44,5 +44,14 @@ class defaultCtrl extends jController {
         $rep->tplname = 'favorite_dashboard';
         return $rep;
     }
+    
+    /**
+    *
+    */
+    function browser() {
+        $rep = $this->getResponse('htmlfragment');
+        $rep->tplname = 'browser';
+        return $rep;
+    }
 }
 

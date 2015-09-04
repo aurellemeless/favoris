@@ -16,7 +16,7 @@
             <li class="active"><a href="{jrooturl ''}">Home</a></li>
             <li><a href="{jurl 'link~default:about'}">About</a></li>
             {ifuserconnected}
-            <li><a href="{jurl 'link~default:favorite'}">My Favoites</a></li>
+            <li><a href="{jurl 'link~default:favorite'}">My Favorites</a></li>
             {/ifuserconnected}
                  
           </ul>

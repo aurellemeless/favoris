@@ -1,6 +1,6 @@
 <?php
 /**
-* @package   link
+* @package   df
 * @subpackage link
 * @author    Aurelle Meless
 * @copyright 2015 your name
@@ -40,23 +40,20 @@ class linkCtrl extends jController {
         $offset = ($page-1)*$count;
         // instanciation de la factory
         $tb=jDao::get('link');
-        if(empty($cb)){
-            $dt = new jDateTime();
-            $filter = (array)json_decode($filtre);
-            $sorting = (array)json_decode($sorting);
-            $conditions=jDao::createConditions();
-            foreach ($filter as $key => $value) {
-                $conditions->addCondition($key,'LIKE','%'.$value.'%'); 
-            }
-            foreach ($sorting as $key => $value) {
-                $conditions->addItemOrder($key, $value);
-            }
-            $records = $tb->findBy($conditions,$offset,$count)->fetchAll();
-            $rep->data["Count"] = $tb->countBy($conditions);
-            $rep->data['Items'] = $records;
-        }else{
-             $rep->data['Items'] = $tb->findAll()->fetchAll();
+        $dt = new jDateTime();
+        $filter = (array)json_decode($filtre);
+        $sorting = (array)json_decode($sorting);
+        $conditions=jDao::createConditions();
+        $conditions->addCondition('user_id', '=',  jAuth::getUserSession()->id);
+        foreach ($filter as $key => $value) {
+            $conditions->addCondition($key,'LIKE','%'.$value.'%'); 
         }
+        foreach ($sorting as $key => $value) {
+            $conditions->addItemOrder($key, $value);
+        }
+        $records = $tb->findBy($conditions,$offset,$count)->fetchAll();
+        $rep->data["Count"] = $tb->countBy($conditions);
+        $rep->data['Items'] = $records;
         
         return $rep;
     }
@@ -67,30 +64,30 @@ class linkCtrl extends jController {
     */
     function create() {
         $rep = $this->getResponse('json');
-        $id=$this->intParam('id', 0, true);
         $category_id=$this->intParam('category_id',null, true);
         $title=$this->param('title', '', true);
         $url=$this->param('url', '', true);
         //$description=$this->param('description', '', true);
         //insert
         if(!empty($url) && !empty($title) && !empty($category_id)){
-            $this->msg='link non  ajoutée';
+            $this->msg='link non  ajouté';
             // instanciation de la factory
             $tb = jDao::get("link");
             // creation d'un record correspondant au dao foo
             $record = jDao::createRecord("link");
             // on remplit le record
             $record->title = $title;
-            //$record->description = $description;
-
+            $record->url = $url;
+            $record->category_id = $category_id;
+            $record->user_id = jAuth::getUserSession()->id;
             // on le sauvegarde dans la base
             try{
                 $tb->insert($record);
                 $this->success=true;
-                $this->msg="link ajoutée ";
+                $this->msg="Lien ajouté ";
             }  catch (Exception $e){
                 $this->success=false;
-                $this->msg="link non ajoutée ";
+                $this->msg="lien non ajouté ";
             }
         }
         
@@ -173,6 +170,21 @@ class linkCtrl extends jController {
                     $msg="link  supprimée ";
         }
         $rep->data=array('success'=>$success,'msg'=>$msg);
+        return $rep;
+    }
+    
+    function view() {
+        $rep = $this->getResponse('json');
+        $id=$this->intParam('id', null, true);
+       
+        try{
+             // instanciation de la factory
+            $tb = jDao::get("link");
+            $rep->data['row'] = $tb->get($id);
+        }  catch (Exception $e){
+            $rep->data['row']=array();
+        }
+                
         return $rep;
     }
     
