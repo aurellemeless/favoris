@@ -16,7 +16,7 @@
                                             {{row.title}}
                                         </td>
                                         <td data-title="'URL'">
-                                           <a href="#/browser/{{row.id}}"> {{row.url}}</a>
+                                           <a href="index.php?module=browser&action=default:index&id={{row.id}}"> {{row.url}}</a>
                                        </td>
                                        <td data-title="'Action'"  >
                                            <button type="button" ng-click="edit($index)" title="Modifier" class="btn btn-primary">

@@ -49,6 +49,7 @@ promo.access=2
 blog.access=2
 event.access=2
 link.access=2
+browser.access=2
 [coordplugins]
 ;name = file_ini_name or 1
 
@@ -231,6 +232,7 @@ files_path="var/sessions/"
 [shop]
 ;define the taxe from if its inside set "include", else its "exclude"
 product_taxes=include
+
 
 
 

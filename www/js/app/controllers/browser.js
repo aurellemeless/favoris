@@ -1,8 +1,22 @@
 /* 
  *  BRowser 
  */
-
-angular.module('df')
+angular.module('dfBrowser',['ngRoute','ui.bootstrap','ngTable']);
+angular.module('dfBrowser')
+        .config(['$routeProvider', '$locationProvider',
+          function($routeProvider,$locationProvider) {
+              $routeProvider.when('/browser/:id', {
+                                    templateUrl:APPBASE+'index.php?module=link&action=default:browser',
+                                    controller: 'BrowserController'
+                              }).
+                otherwise({
+                  redirectTo: '/',
+                  templateUrl: APPBASE+'index.php?module=link&action=default:browser',
+                  controller: 'BrowserController'
+                });
+                
+              // $locationProvider.html5Mode(true);
+          }])
         .controller('BrowserController',['$scope','$http','$filter', '$q', 'ngTableParams','$routeParams','$sce',function($scope, $http, $filter, $q, ngTableParams,$routeParams, $sce){
                 //
                $scope.link = {};

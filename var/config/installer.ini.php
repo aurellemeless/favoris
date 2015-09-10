@@ -44,6 +44,8 @@ blog.installed=1
 blog.version=0.1pre
 link.installed=1
 link.version=0.1pre
+browser.installed=1
+browser.version=0.1pre
 [__modules_data]
 jelix.contexts="db:default"
 
@@ -60,6 +62,7 @@ office.contexts=
 
 
 payment.contexts=
+
 
 
 

@@ -1,0 +1,77 @@
+2015-09-05 12:36:08	::1	notice	2015-09-05 12:36:08	::1	[1024]	The 'simple' url engine is deprecated. use 'basic_significant' or 'significant' url engine	C:\wamp\www\favoris\lib\jelix\core\jConfigCompiler.class.php	148
+	/favoris/index.php?module=link&action=default:favorite
+NULL
+
+	0	trigger_error()	C:\wamp\www\favoris\lib\jelix\core\jConfigCompiler.class.php : 148
+	1	jConfigCompiler::checkMiscParameters()	C:\wamp\www\favoris\lib\jelix\core\jConfigCompiler.class.php : 128
+	2	jConfigCompiler::prepareConfig()	C:\wamp\www\favoris\lib\jelix\core\jConfigCompiler.class.php : 79
+	3	jConfigCompiler::read()	C:\wamp\www\favoris\lib\jelix\core\jConfigCompiler.class.php : 96
+	4	jConfigCompiler::readAndCache()	C:\wamp\www\favoris\lib\jelix\core\jConfig.class.php : 87
+	5	jConfig::load()	C:\wamp\www\favoris\lib\jelix\core\jApp.class.php : 145
+	6	jApp::loadConfig()	C:\wamp\www\favoris\index.php : 16
+2015-09-05 13:37:16	::1	warning	2015-09-05 13:37:16	::1	[2]	Missing argument 2 for jtpl_function_html_jrooturl(), called in C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php on line 120 and defined	C:\wamp\www\favoris\lib\jelix\plugins\tpl\html\function.jrooturl.php	18
+	/favoris/index.php?module=user&action=profile:index
+array (   'module' => 'user',   'action' => 'profile:index', )
+
+	0	jtpl_function_html_jrooturl()	C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php : 120
+	1	template_27ad9c714e4501c6555d846a6a5b1fd7()	C:\wamp\www\favoris\lib\jelix\tpl\jTpl.class.php : 284
+	2	jTpl->fetch()	C:\wamp\www\favoris\lib\jelix\core\response\jResponseHtml.class.php : 184
+	3	jResponseHtml->output()	C:\wamp\www\favoris\lib\jelix\core\jCoordinator.class.php : 224
+	4	jCoordinator->process()	C:\wamp\www\favoris\index.php : 19
+
+
+2015-09-05 13:37:16	::1	notice	2015-09-05 13:37:16	::1	[8]	Undefined variable: ressourceType	C:\wamp\www\favoris\lib\jelix\plugins\tpl\html\function.jrooturl.php	20
+	/favoris/index.php?module=user&action=profile:index
+array (   'module' => 'user',   'action' => 'profile:index', )
+
+	0	jtpl_function_html_jrooturl()	C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php : 120
+	1	template_27ad9c714e4501c6555d846a6a5b1fd7()	C:\wamp\www\favoris\lib\jelix\tpl\jTpl.class.php : 284
+	2	jTpl->fetch()	C:\wamp\www\favoris\lib\jelix\core\response\jResponseHtml.class.php : 184
+	3	jResponseHtml->output()	C:\wamp\www\favoris\lib\jelix\core\jCoordinator.class.php : 224
+	4	jCoordinator->process()	C:\wamp\www\favoris\index.php : 19
+
+
+2015-09-05 13:37:44	::1	warning	2015-09-05 13:37:44	::1	[2]	Missing argument 2 for jtpl_function_html_jrooturl(), called in C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php on line 120 and defined	C:\wamp\www\favoris\lib\jelix\plugins\tpl\html\function.jrooturl.php	18
+	/favoris/index.php?module=user&action=profile:index
+array (   'module' => 'user',   'action' => 'profile:index', )
+
+	0	jtpl_function_html_jrooturl()	C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php : 120
+	1	template_27ad9c714e4501c6555d846a6a5b1fd7()	C:\wamp\www\favoris\lib\jelix\tpl\jTpl.class.php : 284
+	2	jTpl->fetch()	C:\wamp\www\favoris\lib\jelix\core\response\jResponseHtml.class.php : 184
+	3	jResponseHtml->output()	C:\wamp\www\favoris\lib\jelix\core\jCoordinator.class.php : 224
+	4	jCoordinator->process()	C:\wamp\www\favoris\index.php : 19
+
+
+2015-09-05 13:37:44	::1	notice	2015-09-05 13:37:44	::1	[8]	Undefined variable: ressourceType	C:\wamp\www\favoris\lib\jelix\plugins\tpl\html\function.jrooturl.php	20
+	/favoris/index.php?module=user&action=profile:index
+array (   'module' => 'user',   'action' => 'profile:index', )
+
+	0	jtpl_function_html_jrooturl()	C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php : 120
+	1	template_27ad9c714e4501c6555d846a6a5b1fd7()	C:\wamp\www\favoris\lib\jelix\tpl\jTpl.class.php : 284
+	2	jTpl->fetch()	C:\wamp\www\favoris\lib\jelix\core\response\jResponseHtml.class.php : 184
+	3	jResponseHtml->output()	C:\wamp\www\favoris\lib\jelix\core\jCoordinator.class.php : 224
+	4	jCoordinator->process()	C:\wamp\www\favoris\index.php : 19
+
+
+2015-09-05 13:45:55	::1	warning	2015-09-05 13:45:55	::1	[2]	Missing argument 2 for jtpl_function_html_jrooturl(), called in C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php on line 120 and defined	C:\wamp\www\favoris\lib\jelix\plugins\tpl\html\function.jrooturl.php	18
+	/favoris/index.php?module=user&action=profile:index
+array (   'module' => 'user',   'action' => 'profile:index', )
+
+	0	jtpl_function_html_jrooturl()	C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php : 120
+	1	template_27ad9c714e4501c6555d846a6a5b1fd7()	C:\wamp\www\favoris\lib\jelix\tpl\jTpl.class.php : 284
+	2	jTpl->fetch()	C:\wamp\www\favoris\lib\jelix\core\response\jResponseHtml.class.php : 184
+	3	jResponseHtml->output()	C:\wamp\www\favoris\lib\jelix\core\jCoordinator.class.php : 224
+	4	jCoordinator->process()	C:\wamp\www\favoris\index.php : 19
+
+
+2015-09-05 13:45:55	::1	notice	2015-09-05 13:45:55	::1	[8]	Undefined variable: ressourceType	C:\wamp\www\favoris\lib\jelix\plugins\tpl\html\function.jrooturl.php	20
+	/favoris/index.php?module=user&action=profile:index
+array (   'module' => 'user',   'action' => 'profile:index', )
+
+	0	jtpl_function_html_jrooturl()	C:\wamp\www\favoris\temp\site\www\compiled\templates\modules\user\profile_html_t_15.php : 120
+	1	template_27ad9c714e4501c6555d846a6a5b1fd7()	C:\wamp\www\favoris\lib\jelix\tpl\jTpl.class.php : 284
+	2	jTpl->fetch()	C:\wamp\www\favoris\lib\jelix\core\response\jResponseHtml.class.php : 184
+	3	jResponseHtml->output()	C:\wamp\www\favoris\lib\jelix\core\jCoordinator.class.php : 224
+	4	jCoordinator->process()	C:\wamp\www\favoris\index.php : 19
+
+
