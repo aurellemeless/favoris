@@ -58,7 +58,7 @@ defaultJformsBuilder=html
 
 [responses]
 html=myHtmlResponse
-
+reader=readerResponse
 [error_handling]
 ;errorMessage="A technical error has occured (code: %code%). Sorry for this inconvenience."
 

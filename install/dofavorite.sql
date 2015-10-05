@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 31 Août 2015 à 17:06
+-- Généré le :  Mer 16 Septembre 2015 à 16:57
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -33,14 +33,16 @@ CREATE TABLE IF NOT EXISTS `hga_category` (
   `parent` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_hga_category_hga_category_idx` (`parent`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `hga_category`
 --
 
 INSERT INTO `hga_category` (`id`, `title`, `image`, `parent`) VALUES
-(2, 'juh;jhlkkhlkjlkkjkplji', NULL, NULL);
+(2, 'informatique', NULL, NULL),
+(3, 'infos afrique', NULL, NULL),
+(4, 'Comptabilite', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -130,9 +132,20 @@ CREATE TABLE IF NOT EXISTS `hga_link` (
   `category_id` int(11) NOT NULL,
   `screenshot` text,
   `content` text,
+  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_hga_link_hga_category1_idx` (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `hga_link`
+--
+
+INSERT INTO `hga_link` (`id`, `title`, `url`, `category_id`, `screenshot`, `content`, `user_id`) VALUES
+(1, 'comment ca marche', 'http://commentcamarche.net', 2, NULL, NULL, 6),
+(2, '01net', 'http://telecharger.net', 2, NULL, NULL, 6),
+(3, 'abidjan.net', 'http://abidjan.net', 3, NULL, NULL, 6),
+(4, 'Informateur.info', 'http://informateur.info', 3, NULL, NULL, 6);
 
 -- --------------------------------------------------------
 
@@ -202,14 +215,15 @@ CREATE TABLE IF NOT EXISTS `hga_user` (
   UNIQUE KEY `login_UNIQUE` (`login`),
   UNIQUE KEY `login` (`login`,`email`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `hga_user`
 --
 
 INSERT INTO `hga_user` (`id`, `login`, `password`, `email`, `lastname`, `firstname`, `professionnal`, `keyactivate`, `sessionid`, `appkey`, `createdate`, `modifydate`, `createduser`, `modifyuser`, `active`, `birthdate`) VALUES
-(3, 'admin', '909ecde5825e31a0b4266173a7bc12348165a3bd', 'sergyleves@gmail.com', 'Administrator', 'Admin', 'YES', NULL, NULL, NULL, NULL, '2015-05-08 10:57:05', 1, 1, 'NO', '1990-12-21');
+(3, 'admin', '909ecde5825e31a0b4266173a7bc12348165a3bd', 'sergyleves@gmail.com', 'Administrator', 'Admin', 'YES', NULL, NULL, NULL, NULL, '2015-05-08 10:57:05', 1, 1, 'NO', '1990-12-21'),
+(6, 'aurelle.meless@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'aurelle.meless@gmail.com', 'Leves', 'Sergy', NULL, '55e618f13627f3.38743688', NULL, NULL, '2015-09-01 21:30:25', '2015-09-05 13:37:41', NULL, NULL, 'NO', NULL);
 
 -- --------------------------------------------------------
 

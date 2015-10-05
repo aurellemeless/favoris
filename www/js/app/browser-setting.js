@@ -9,10 +9,14 @@ var calcHeight = function() {
     
 $(document).ready(function() {
   calcHeight();
+  
 });
 
 $(window).resize(function() {
         calcHeight();
     }).load(function() {
       calcHeight();
+       /* $("#main-browser").contents().find("body").html(
+        $("#main-browser").contents().find("body").html().replace("\"/", "\"/"+$("#link_url").val()+'/')
+    );*/
     });
