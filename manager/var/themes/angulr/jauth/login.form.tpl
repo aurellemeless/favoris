@@ -1,5 +1,5 @@
-{meta_html css '/trumed/www/styles/sb-admin/css/bootstrap.min.css'}
-{meta_html css '/trumed/www/styles/css/connexion.css'}
+{meta_html css $rootUrl.'www/styles/sb-admin/css/bootstrap.min.css'}
+{meta_html css $rootUrl.'www/styles/css/connexion.css'}
 
     <div class="container">
         
@@ -21,8 +21,8 @@
                     
                   {if ! $isLogged} 
                       
-                  <form class="form-signin" role="form" action="{jurl 'jauth~login:in'}" method="post">
-                    <img src="/trumed/www/images/logo.png"/>
+                  <form class="form-signin" role="form" action="{jurl 'user~login:in'}" method="post">
+                    <img src="{$rootUrl}www/images/logo.png"/>
                     <input type="text" class="form-control" name="login" autocomplete="off" placeholder="nom d'utilisateur" required autofocus>
                     <input type="password" class="form-control" name="password" placeholder="Mot de passe" required>
                    {if $showRememberMe}
@@ -35,10 +35,10 @@
                    {if !empty($auth_url_return)}
                         <input type="hidden" name="auth_url_return" value="{$auth_url_return|eschtml}" />
                    {/if}
-                   <p style="margin-top:20px;text-align:center;"> TRUMED &copy EMNIS 2015</a></p>
+                   <p style="margin-top:20px;text-align:center;"> DF &copy EMNIS 2015</a></p>
                   </form>
                  {else}
-                        <p>{$user->login} | <a href="{jurl 'jauth~login:out'}" >{@jauth~auth.buttons.logout@}</a></p>
+                        <p>{$user->login} | <a href="{jurl 'user~login:out'}" >{@jauth~auth.buttons.logout@}</a></p>
                  {/if}
 
 

@@ -8,7 +8,7 @@ driver = Db
 
 ;============ Parameters for the plugin
 ; session variable name
-session_name = "BOS"
+session_name = "MANAGER"
 
 ; Says if there is a check on the ip address : verify if the ip
 ; is the same when the user has been connected
@@ -48,7 +48,7 @@ on_error_sleep = 3
 after_login = "bos~default:index"
 
 ; action to redirect after a logout
-after_logout = "jauth~login:form"
+after_logout = "user~login:form"
 
 ; says if after_login can be overloaded by a "auth_url_return" parameter in the url/form for the login
 enable_after_login_override = off
