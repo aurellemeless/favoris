@@ -20,13 +20,10 @@
 	<meta name="author" content="">
 
 	<title> <?php echo $this->title; ?> | Save your links</title>
-
 	<!-- Mobile Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="/favicon.ico">
-
 	<!-- Google Webfont -->
 	<link href='http://fonts.googleapis.com/css?family=Vampiro+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,800' rel='stylesheet' type='text/css'>
@@ -233,7 +230,7 @@
 <script src="<?php echo BASEPATH; ?>styles/df/js/flex-slider/jquery.flexslider.js"></script>
 <script src="<?php echo BASEPATH; ?>styles/df/js/owl-carousel/owl.carousel.js"></script>
 <script src="<?php echo BASEPATH; ?>styles/df/js/slick/slick.js"></script>
-<script src="<?php echo BASEPATH; ?>js/jquery.prettyphoto.js"></script>
+<script src="<?php echo BASEPATH; ?>styles/df/js/jquery.prettyphoto.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 <script src="<?php echo BASEPATH; ?>styles/df/js/gmaps.js"></script>
 <script src="<?php echo BASEPATH; ?>styles/df/js/contact.js"></script>
