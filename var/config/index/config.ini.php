@@ -6,6 +6,7 @@ startAction="default:index"
 
 [responses]
 csv="office~jResponseCsv"
+php=phpResponse
 html2pdf="office~jResponseHtml2Pdf"
 [modules]
 jauth.access=2

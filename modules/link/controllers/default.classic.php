@@ -11,13 +11,24 @@
 class defaultCtrl extends jController {
     /**
     *
-    */
+
     function index() {
         $rep = $this->getResponse('html');
+        $rep->title = 'Accueil '.$rep->appName;
+        $rep->body->assign('rootUrl', jApp::config()->urlengine["basePath"]);
 
         return $rep;
     }
-    
+    */
+
+    function index(){
+
+        $rep = $this->getResponse('php');
+        $rep->tplname = 'accueil';
+        $rep->assign('title', 'Home - welcome');
+        return $rep;
+    }
+
     /**
     *
     */
